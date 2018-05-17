@@ -3,6 +3,9 @@ logs
 *.log
 npm-debug.log*
 
+# pageage lock files
+yarn.lock
+
 # Runtime data
 pids
 *.pid
