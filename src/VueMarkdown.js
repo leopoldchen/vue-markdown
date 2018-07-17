@@ -9,6 +9,7 @@ import insert from 'markdown-it-ins'
 import mark from 'markdown-it-mark'
 import toc from 'markdown-it-toc-and-anchor'
 import katex from 'markdown-it-katex'
+import highlightjs from 'markdown-it-highlightjs'
 import tasklists from 'markdown-it-task-lists'
 
 export default {
@@ -146,11 +147,15 @@ export default {
       .use(abbreviation)
       .use(insert)
       .use(mark)
-      .use(katex, { "throwOnError": false, "errorColor": " #cc0000" })
-      .use(tasklists, { enabled: this.taskLists })
+      .use(katex, {"throwOnError" : false, "errorColor" : " #cc0000"})
+      .use(tasklists, {enabled: this.taskLists})
 
     if (this.emoji) {
       this.md.use(emoji)
+    }
+
+    if (this.highlight) {
+      this.md.use(highlightjs);
     }
 
     this.md.set({
