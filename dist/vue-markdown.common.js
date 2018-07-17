@@ -6,14 +6,14 @@
 
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("babel-runtime/core-js/get-iterator"), require("babel-runtime/core-js/object/keys"), require("markdown-it"), require("markdown-it-emoji"), require("markdown-it-sub"), require("markdown-it-sup"), require("markdown-it-footnote"), require("markdown-it-deflist"), require("markdown-it-abbr"), require("markdown-it-ins"), require("markdown-it-mark"), require("markdown-it-toc-and-anchor"), require("markdown-it-katex"), require("markdown-it-highlightjs"), require("markdown-it-task-lists"));
+		module.exports = factory(require("babel-runtime/core-js/object/keys"), require("babel-runtime/core-js/get-iterator"), require("markdown-it"), require("markdown-it-emoji"), require("markdown-it-sub"), require("markdown-it-sup"), require("markdown-it-footnote"), require("markdown-it-deflist"), require("markdown-it-abbr"), require("markdown-it-ins"), require("markdown-it-mark"), require("markdown-it-toc-and-anchor"), require("markdown-it-katex"), require("markdown-it-highlightjs"), require("markdown-it-task-lists"), require("markdown-it-incremental-dom"), require("incremental-dom"));
 	else if(typeof define === 'function' && define.amd)
-		define(["babel-runtime/core-js/get-iterator", "babel-runtime/core-js/object/keys", "markdown-it", "markdown-it-emoji", "markdown-it-sub", "markdown-it-sup", "markdown-it-footnote", "markdown-it-deflist", "markdown-it-abbr", "markdown-it-ins", "markdown-it-mark", "markdown-it-toc-and-anchor", "markdown-it-katex", "markdown-it-highlightjs", "markdown-it-task-lists"], factory);
+		define(["babel-runtime/core-js/object/keys", "babel-runtime/core-js/get-iterator", "markdown-it", "markdown-it-emoji", "markdown-it-sub", "markdown-it-sup", "markdown-it-footnote", "markdown-it-deflist", "markdown-it-abbr", "markdown-it-ins", "markdown-it-mark", "markdown-it-toc-and-anchor", "markdown-it-katex", "markdown-it-highlightjs", "markdown-it-task-lists", "markdown-it-incremental-dom", "incremental-dom"], factory);
 	else if(typeof exports === 'object')
-		exports["VueMarkdown"] = factory(require("babel-runtime/core-js/get-iterator"), require("babel-runtime/core-js/object/keys"), require("markdown-it"), require("markdown-it-emoji"), require("markdown-it-sub"), require("markdown-it-sup"), require("markdown-it-footnote"), require("markdown-it-deflist"), require("markdown-it-abbr"), require("markdown-it-ins"), require("markdown-it-mark"), require("markdown-it-toc-and-anchor"), require("markdown-it-katex"), require("markdown-it-highlightjs"), require("markdown-it-task-lists"));
+		exports["VueMarkdown"] = factory(require("babel-runtime/core-js/object/keys"), require("babel-runtime/core-js/get-iterator"), require("markdown-it"), require("markdown-it-emoji"), require("markdown-it-sub"), require("markdown-it-sup"), require("markdown-it-footnote"), require("markdown-it-deflist"), require("markdown-it-abbr"), require("markdown-it-ins"), require("markdown-it-mark"), require("markdown-it-toc-and-anchor"), require("markdown-it-katex"), require("markdown-it-highlightjs"), require("markdown-it-task-lists"), require("markdown-it-incremental-dom"), require("incremental-dom"));
 	else
-		root["VueMarkdown"] = factory(root["babel-runtime/core-js/get-iterator"], root["babel-runtime/core-js/object/keys"], root["markdown-it"], root["markdown-it-emoji"], root["markdown-it-sub"], root["markdown-it-sup"], root["markdown-it-footnote"], root["markdown-it-deflist"], root["markdown-it-abbr"], root["markdown-it-ins"], root["markdown-it-mark"], root["markdown-it-toc-and-anchor"], root["markdown-it-katex"], root["markdown-it-highlightjs"], root["markdown-it-task-lists"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_4__, __WEBPACK_EXTERNAL_MODULE_5__, __WEBPACK_EXTERNAL_MODULE_6__, __WEBPACK_EXTERNAL_MODULE_7__, __WEBPACK_EXTERNAL_MODULE_8__, __WEBPACK_EXTERNAL_MODULE_9__, __WEBPACK_EXTERNAL_MODULE_10__, __WEBPACK_EXTERNAL_MODULE_11__, __WEBPACK_EXTERNAL_MODULE_12__, __WEBPACK_EXTERNAL_MODULE_13__, __WEBPACK_EXTERNAL_MODULE_14__, __WEBPACK_EXTERNAL_MODULE_15__) {
+		root["VueMarkdown"] = factory(root["babel-runtime/core-js/object/keys"], root["babel-runtime/core-js/get-iterator"], root["markdown-it"], root["markdown-it-emoji"], root["markdown-it-sub"], root["markdown-it-sup"], root["markdown-it-footnote"], root["markdown-it-deflist"], root["markdown-it-abbr"], root["markdown-it-ins"], root["markdown-it-mark"], root["markdown-it-toc-and-anchor"], root["markdown-it-katex"], root["markdown-it-highlightjs"], root["markdown-it-task-lists"], root["markdown-it-incremental-dom"], root["incremental-dom"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_4__, __WEBPACK_EXTERNAL_MODULE_5__, __WEBPACK_EXTERNAL_MODULE_6__, __WEBPACK_EXTERNAL_MODULE_7__, __WEBPACK_EXTERNAL_MODULE_8__, __WEBPACK_EXTERNAL_MODULE_9__, __WEBPACK_EXTERNAL_MODULE_10__, __WEBPACK_EXTERNAL_MODULE_11__, __WEBPACK_EXTERNAL_MODULE_12__, __WEBPACK_EXTERNAL_MODULE_13__, __WEBPACK_EXTERNAL_MODULE_14__, __WEBPACK_EXTERNAL_MODULE_15__, __WEBPACK_EXTERNAL_MODULE_16__, __WEBPACK_EXTERNAL_MODULE_17__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -66,13 +66,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _getIterator2 = __webpack_require__(1);
-
-	var _getIterator3 = _interopRequireDefault(_getIterator2);
-
-	var _keys = __webpack_require__(2);
+	var _keys = __webpack_require__(1);
 
 	var _keys2 = _interopRequireDefault(_keys);
+
+	var _getIterator2 = __webpack_require__(2);
+
+	var _getIterator3 = _interopRequireDefault(_getIterator2);
 
 	var _markdownIt = __webpack_require__(3);
 
@@ -126,12 +126,18 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _markdownItTaskLists2 = _interopRequireDefault(_markdownItTaskLists);
 
+	var _markdownItIncrementalDom = __webpack_require__(16);
+
+	var _markdownItIncrementalDom2 = _interopRequireDefault(_markdownItIncrementalDom);
+
+	var _incrementalDom = __webpack_require__(17);
+
+	var _incrementalDom2 = _interopRequireDefault(_incrementalDom);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = {
-	  md: new _markdownIt2.default(),
-
-	  template: '<div><slot></slot></div>',
+	  template: '<div ref="markdown"><slot></slot></div>',
 
 	  data: function data() {
 	    return {
@@ -263,82 +269,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 
-	  render: function render(createElement) {
-	    var _this = this;
-
-	    this.md = new _markdownIt2.default().use(_markdownItSub2.default).use(_markdownItSup2.default).use(_markdownItFootnote2.default).use(_markdownItDeflist2.default).use(_markdownItAbbr2.default).use(_markdownItIns2.default).use(_markdownItMark2.default).use(_markdownItKatex2.default, { "throwOnError": false, "errorColor": " #cc0000" }).use(_markdownItTaskLists2.default, { enabled: this.taskLists });
-
-	    if (this.emoji) {
-	      this.md.use(_markdownItEmoji2.default);
-	    }
-
-	    if (this.highlight) {
-	      this.md.use(_markdownItHighlightjs2.default);
-	    }
-
-	    this.md.set({
-	      html: this.html,
-	      xhtmlOut: this.xhtmlOut,
-	      breaks: this.breaks,
-	      linkify: this.linkify,
-	      typographer: this.typographer,
-	      langPrefix: this.langPrefix,
-	      quotes: this.quotes
-	    });
-	    this.md.renderer.rules.table_open = function () {
-	      return '<table class="' + _this.tableClass + '">\n';
-	    };
-	    var defaultLinkRenderer = this.md.renderer.rules.link_open || function (tokens, idx, options, env, self) {
-	      return self.renderToken(tokens, idx, options);
-	    };
-	    this.md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
-	      (0, _keys2.default)(_this.anchorAttributes).map(function (attribute) {
-	        var aIndex = tokens[idx].attrIndex(attribute);
-	        var value = _this.anchorAttributes[attribute];
-	        if (aIndex < 0) {
-	          tokens[idx].attrPush([attribute, value]); // add new attribute
-	        } else {
-	          tokens[idx].attrs[aIndex][1] = value;
-	        }
-	      });
-	      return defaultLinkRenderer(tokens, idx, options, env, self);
-	    };
-
-	    if (this.toc) {
-	      this.md.use(_markdownItTocAndAnchor2.default, {
-	        tocClassName: this.tocClass,
-	        tocFirstLevel: this.tocFirstLevel,
-	        tocLastLevel: this.tocLastLevelComputed,
-	        anchorLink: this.tocAnchorLink,
-	        anchorLinkSymbol: this.tocAnchorLinkSymbol,
-	        anchorLinkSpace: this.tocAnchorLinkSpace,
-	        anchorClassName: this.tocAnchorClass,
-	        anchorLinkSymbolClassName: this.tocAnchorLinkClass,
-	        tocCallback: function tocCallback(tocMarkdown, tocArray, tocHtml) {
-	          if (tocHtml) {
-	            if (_this.tocId && document.getElementById(_this.tocId)) {
-	              document.getElementById(_this.tocId).innerHTML = tocHtml;
-	            }
-
-	            _this.$emit('toc-rendered', tocHtml);
-	          }
-	        }
-	      });
-	    }
-
-	    var outHtml = this.show ? this.md.render(this.prerender(this.sourceData)) : '';
-	    outHtml = this.postrender(outHtml);
-
-	    this.$emit('rendered', outHtml);
-	    return createElement('div', {
-	      domProps: {
-	        innerHTML: outHtml
-	      }
-	    });
-	  },
 	  beforeMount: function beforeMount() {
-	    var _this2 = this;
-
 	    if (this.$slots.default) {
 	      this.sourceData = '';
 	      var _iteratorNormalCompletion = true;
@@ -366,17 +297,101 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	      }
 	    }
+	  },
+	  mounted: function mounted() {
+	    var _this = this;
+
+	    this.regenerateMD();
+	    this.renderMarkdown();
 
 	    this.$watch('source', function () {
-	      _this2.sourceData = _this2.prerender(_this2.source);
-	      _this2.$forceUpdate();
+	      _this.sourceData = _this.prerender(_this.source);
+	      _this.renderMarkdown();
 	    });
 
 	    this.watches.forEach(function (v) {
-	      _this2.$watch(v, function () {
-	        _this2.$forceUpdate();
+	      _this.$watch(v, function () {
+	        _this.regenerateMD();
+	        _this.renderMarkdown();
 	      });
 	    });
+	  },
+
+
+	  methods: {
+	    regenerateMD: function regenerateMD() {
+	      var _this2 = this;
+
+	      this.md = new _markdownIt2.default().use(_markdownItSub2.default).use(_markdownItSup2.default).use(_markdownItFootnote2.default).use(_markdownItDeflist2.default).use(_markdownItAbbr2.default).use(_markdownItIns2.default).use(_markdownItMark2.default).use(_markdownItKatex2.default, {
+	        "throwOnError": false,
+	        "errorColor": " #cc0000"
+	      }).use(_markdownItTaskLists2.default, {
+	        enabled: this.taskLists
+	      }).use(_markdownItIncrementalDom2.default, _incrementalDom2.default);
+
+	      if (this.emoji) {
+	        this.md.use(_markdownItEmoji2.default);
+	      }
+
+	      if (this.highlight) {
+	        this.md.use(_markdownItHighlightjs2.default);
+	      }
+
+	      this.md.set({
+	        html: this.html,
+	        xhtmlOut: this.xhtmlOut,
+	        breaks: this.breaks,
+	        linkify: this.linkify,
+	        typographer: this.typographer,
+	        langPrefix: this.langPrefix,
+	        quotes: this.quotes
+	      });
+	      this.md.renderer.rules.table_open = function () {
+	        return '<table class="' + _this2.tableClass + '">\n';
+	      };
+	      var defaultLinkRenderer = this.md.renderer.rules.link_open || function (tokens, idx, options, env, self) {
+	        return self.renderToken(tokens, idx, options);
+	      };
+	      this.md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
+	        (0, _keys2.default)(_this2.anchorAttributes).map(function (attribute) {
+	          var aIndex = tokens[idx].attrIndex(attribute);
+	          var value = _this2.anchorAttributes[attribute];
+	          if (aIndex < 0) {
+	            tokens[idx].attrPush([attribute, value]); // add new attribute
+	          } else {
+	            tokens[idx].attrs[aIndex][1] = value;
+	          }
+	        });
+	        return defaultLinkRenderer(tokens, idx, options, env, self);
+	      };
+
+	      if (this.toc) {
+	        this.md.use(_markdownItTocAndAnchor2.default, {
+	          tocClassName: this.tocClass,
+	          tocFirstLevel: this.tocFirstLevel,
+	          tocLastLevel: this.tocLastLevelComputed,
+	          anchorLink: this.tocAnchorLink,
+	          anchorLinkSymbol: this.tocAnchorLinkSymbol,
+	          anchorLinkSpace: this.tocAnchorLinkSpace,
+	          anchorClassName: this.tocAnchorClass,
+	          anchorLinkSymbolClassName: this.tocAnchorLinkClass,
+	          tocCallback: function tocCallback(tocMarkdown, tocArray, tocHtml) {
+	            if (tocHtml) {
+	              if (_this2.tocId && document.getElementById(_this2.tocId)) {
+	                document.getElementById(_this2.tocId).innerHTML = tocHtml;
+	              }
+
+	              _this2.$emit('toc-rendered', tocHtml);
+	            }
+	          }
+	        });
+	      }
+	    },
+	    renderMarkdown: function renderMarkdown() {
+	      if (!this.md) return;
+	      var func = this.md.renderToIncrementalDOM(this.show ? this.prerender(this.sourceData) : '');
+	      _incrementalDom2.default.patch(this.$refs.markdown, func);
+	    }
 	  }
 	};
 
@@ -469,6 +484,18 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports) {
 
 	module.exports = __WEBPACK_EXTERNAL_MODULE_15__;
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_16__;
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_17__;
 
 /***/ })
 /******/ ])
