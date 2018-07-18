@@ -11,8 +11,18 @@ import toc from 'markdown-it-toc-and-anchor'
 import katex from 'markdown-it-katex'
 import highlightjs from 'markdown-it-highlightjs'
 import tasklists from 'markdown-it-task-lists'
-import mdincrementaldom from 'markdown-it-incremental-dom'
-import IncrementalDOM from 'incremental-dom'
+import virtualize from 'snabbdom-virtualize'
+
+const snabbdom = require('snabbdom')
+const snabbdomPatch = snabbdom.init([
+  require('snabbdom/modules/attributes').default,
+  require('snabbdom/modules/class').default,
+  require('snabbdom/modules/dataset').default,
+  require('snabbdom/modules/eventlisteners').default,
+  require('snabbdom/modules/hero').default,
+  require('snabbdom/modules/props').default,
+  require('snabbdom/modules/style').default,
+])
 
 export default {
   template: '<div ref="markdown"><slot></slot></div>',
@@ -161,12 +171,13 @@ export default {
     })
 
     this.watches.forEach((v) => {
-      this.$watch(v, () => {
-        this.regenerateMD()
-        this.renderMarkdown()
-      })
+      if(v !== 'source'){
+        this.$watch(v, () => {
+          this.regenerateMD()
+          this.renderMarkdown()
+        })
+      }
     })
-
 
   },
 
@@ -187,10 +198,6 @@ export default {
         .use(tasklists, {
           enabled: this.taskLists
         })
-        .use(
-          mdincrementaldom,
-          IncrementalDOM
-        )
 
       if (this.emoji) {
         this.md.use(emoji)
@@ -248,13 +255,15 @@ export default {
           },
         })
       }
-
     },
 
     renderMarkdown() {
       if(!this.md) return
-      let func = this.md.renderToIncrementalDOM(this.show ? this.prerender(this.sourceData) : '')
-      IncrementalDOM.patch(this.$refs.markdown, func)
+      let outHtml = this.md.render(this.show ? this.prerender(this.sourceData) : '')
+      outHtml = '<div>' + this.postrender(outHtml) + '</div>'
+      let newVNode = virtualize(outHtml)
+      let oldVNode = virtualize(this.$refs.markdown)
+      snabbdomPatch(oldVNode, newVNode)
     },
   }
 }
