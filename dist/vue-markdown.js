@@ -40401,7 +40401,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (is.array(children)) {
 	        for (i = 0; i < children.length; ++i) {
 	            if (is.primitive(children[i]))
-	                children[i] = vnode_1.vnode(undefined, undefined, undefined, children[i], undefined);
+	                children[i] = vnode_1.vnode(undefined, undefined, undefined, children[i]);
 	        }
 	    }
 	    if (sel[0] === 's' && sel[1] === 'v' && sel[2] === 'g' &&
@@ -41067,14 +41067,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	                }
 	            }
 	        }
-	        if (oldStartIdx <= oldEndIdx || newStartIdx <= newEndIdx) {
-	            if (oldStartIdx > oldEndIdx) {
-	                before = newCh[newEndIdx + 1] == null ? null : newCh[newEndIdx + 1].elm;
-	                addVnodes(parentElm, before, newCh, newStartIdx, newEndIdx, insertedVnodeQueue);
-	            }
-	            else {
-	                removeVnodes(parentElm, oldCh, oldStartIdx, oldEndIdx);
-	            }
+	        if (oldStartIdx > oldEndIdx) {
+	            before = newCh[newEndIdx + 1] == null ? null : newCh[newEndIdx + 1].elm;
+	            addVnodes(parentElm, before, newCh, newStartIdx, newEndIdx, insertedVnodeQueue);
+	        }
+	        else if (newStartIdx > newEndIdx) {
+	            removeVnodes(parentElm, oldCh, oldStartIdx, oldEndIdx);
 	        }
 	    }
 	    function patchVnode(oldVnode, vnode, insertedVnodeQueue) {
@@ -41278,10 +41276,20 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	Object.defineProperty(exports, "__esModule", { value: true });
+	var booleanAttrs = ["allowfullscreen", "async", "autofocus", "autoplay", "checked", "compact", "controls", "declare",
+	    "default", "defaultchecked", "defaultmuted", "defaultselected", "defer", "disabled", "draggable",
+	    "enabled", "formnovalidate", "hidden", "indeterminate", "inert", "ismap", "itemscope", "loop", "multiple",
+	    "muted", "nohref", "noresize", "noshade", "novalidate", "nowrap", "open", "pauseonexit", "readonly",
+	    "required", "reversed", "scoped", "seamless", "selected", "sortable", "spellcheck", "translate",
+	    "truespeed", "typemustmatch", "visible"];
 	var xlinkNS = 'http://www.w3.org/1999/xlink';
 	var xmlNS = 'http://www.w3.org/XML/1998/namespace';
 	var colonChar = 58;
 	var xChar = 120;
+	var booleanAttrsDict = Object.create(null);
+	for (var i = 0, len = booleanAttrs.length; i < len; i++) {
+	    booleanAttrsDict[booleanAttrs[i]] = true;
+	}
 	function updateAttrs(oldVnode, vnode) {
 	    var key, elm = vnode.elm, oldAttrs = oldVnode.data.attrs, attrs = vnode.data.attrs;
 	    if (!oldAttrs && !attrs)
@@ -41295,11 +41303,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var cur = attrs[key];
 	        var old = oldAttrs[key];
 	        if (old !== cur) {
-	            if (cur === true) {
-	                elm.setAttribute(key, "");
-	            }
-	            else if (cur === false) {
-	                elm.removeAttribute(key);
+	            if (booleanAttrsDict[key]) {
+	                if (cur) {
+	                    elm.setAttribute(key, "");
+	                }
+	                else {
+	                    elm.removeAttribute(key);
+	                }
 	            }
 	            else {
 	                if (key.charCodeAt(0) !== xChar) {
@@ -41381,9 +41391,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    for (key in oldDataset) {
 	        if (!dataset[key]) {
 	            if (d) {
-	                if (key in d) {
-	                    delete d[key];
-	                }
+	                delete d[key];
 	            }
 	            else {
 	                elm.removeAttribute('data-' + key.replace(CAPS_REGEX, '-$&').toLowerCase());
