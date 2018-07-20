@@ -9,7 +9,7 @@ import insert from 'markdown-it-ins'
 import mark from 'markdown-it-mark'
 import toc from 'markdown-it-toc-and-anchor'
 import katex from 'markdown-it-katex'
-import highlightjs from 'markdown-it-highlightjs'
+import prism from 'markdown-it-prism'
 import tasklists from 'markdown-it-task-lists'
 import virtualize from 'snabbdom-virtualize'
 
@@ -204,7 +204,11 @@ export default {
       }
 
       if (this.highlight) {
-        this.md.use(highlightjs);
+        this.md.use(prism, {
+          plugins: [
+            'keep-markup'
+          ]
+        })
       }
 
       this.md.set({
@@ -257,10 +261,13 @@ export default {
       }
     },
 
+
     renderMarkdown() {
       if(!this.md) return
+
       let outHtml = this.md.render(this.show ? this.prerender(this.sourceData) : '')
       outHtml = '<div>' + this.postrender(outHtml) + '</div>'
+
       let newVNode = virtualize(outHtml)
       let oldVNode = virtualize(this.$refs.markdown)
       snabbdomPatch(oldVNode, newVNode)
