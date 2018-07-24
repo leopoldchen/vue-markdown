@@ -6,13 +6,13 @@
 
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("babel-runtime/core-js/object/keys"), require("babel-runtime/core-js/get-iterator"), require("markdown-it"), require("markdown-it-emoji"), require("markdown-it-sub"), require("markdown-it-sup"), require("markdown-it-footnote"), require("markdown-it-deflist"), require("markdown-it-abbr"), require("markdown-it-ins"), require("markdown-it-mark"), require("markdown-it-toc-and-anchor"), require("markdown-it-katex"), require("markdown-it-prism"), require("markdown-it-task-lists"), require("snabbdom-virtualize"), require("snabbdom"), require("snabbdom/modules/attributes"), require("snabbdom/modules/class"), require("snabbdom/modules/dataset"), require("snabbdom/modules/eventlisteners"), require("snabbdom/modules/hero"), require("snabbdom/modules/props"), require("snabbdom/modules/style"));
+		module.exports = factory(require("babel-runtime/core-js/object/keys"), require("babel-runtime/core-js/get-iterator"), require("markdown-it"), require("markdown-it-emoji"), require("markdown-it-sub"), require("markdown-it-sup"), require("markdown-it-footnote"), require("markdown-it-deflist"), require("markdown-it-abbr"), require("markdown-it-ins"), require("markdown-it-mark"), require("markdown-it-toc-and-anchor"), require("markdown-it-katex"), require("markdown-it-highlightjs"), require("markdown-it-task-lists"), require("snabbdom-virtualize"), require("snabbdom"), require("snabbdom/modules/attributes"), require("snabbdom/modules/class"), require("snabbdom/modules/dataset"), require("snabbdom/modules/eventlisteners"), require("snabbdom/modules/hero"), require("snabbdom/modules/props"), require("snabbdom/modules/style"));
 	else if(typeof define === 'function' && define.amd)
-		define(["babel-runtime/core-js/object/keys", "babel-runtime/core-js/get-iterator", "markdown-it", "markdown-it-emoji", "markdown-it-sub", "markdown-it-sup", "markdown-it-footnote", "markdown-it-deflist", "markdown-it-abbr", "markdown-it-ins", "markdown-it-mark", "markdown-it-toc-and-anchor", "markdown-it-katex", "markdown-it-prism", "markdown-it-task-lists", "snabbdom-virtualize", "snabbdom", "snabbdom/modules/attributes", "snabbdom/modules/class", "snabbdom/modules/dataset", "snabbdom/modules/eventlisteners", "snabbdom/modules/hero", "snabbdom/modules/props", "snabbdom/modules/style"], factory);
+		define(["babel-runtime/core-js/object/keys", "babel-runtime/core-js/get-iterator", "markdown-it", "markdown-it-emoji", "markdown-it-sub", "markdown-it-sup", "markdown-it-footnote", "markdown-it-deflist", "markdown-it-abbr", "markdown-it-ins", "markdown-it-mark", "markdown-it-toc-and-anchor", "markdown-it-katex", "markdown-it-highlightjs", "markdown-it-task-lists", "snabbdom-virtualize", "snabbdom", "snabbdom/modules/attributes", "snabbdom/modules/class", "snabbdom/modules/dataset", "snabbdom/modules/eventlisteners", "snabbdom/modules/hero", "snabbdom/modules/props", "snabbdom/modules/style"], factory);
 	else if(typeof exports === 'object')
-		exports["VueMarkdown"] = factory(require("babel-runtime/core-js/object/keys"), require("babel-runtime/core-js/get-iterator"), require("markdown-it"), require("markdown-it-emoji"), require("markdown-it-sub"), require("markdown-it-sup"), require("markdown-it-footnote"), require("markdown-it-deflist"), require("markdown-it-abbr"), require("markdown-it-ins"), require("markdown-it-mark"), require("markdown-it-toc-and-anchor"), require("markdown-it-katex"), require("markdown-it-prism"), require("markdown-it-task-lists"), require("snabbdom-virtualize"), require("snabbdom"), require("snabbdom/modules/attributes"), require("snabbdom/modules/class"), require("snabbdom/modules/dataset"), require("snabbdom/modules/eventlisteners"), require("snabbdom/modules/hero"), require("snabbdom/modules/props"), require("snabbdom/modules/style"));
+		exports["VueMarkdown"] = factory(require("babel-runtime/core-js/object/keys"), require("babel-runtime/core-js/get-iterator"), require("markdown-it"), require("markdown-it-emoji"), require("markdown-it-sub"), require("markdown-it-sup"), require("markdown-it-footnote"), require("markdown-it-deflist"), require("markdown-it-abbr"), require("markdown-it-ins"), require("markdown-it-mark"), require("markdown-it-toc-and-anchor"), require("markdown-it-katex"), require("markdown-it-highlightjs"), require("markdown-it-task-lists"), require("snabbdom-virtualize"), require("snabbdom"), require("snabbdom/modules/attributes"), require("snabbdom/modules/class"), require("snabbdom/modules/dataset"), require("snabbdom/modules/eventlisteners"), require("snabbdom/modules/hero"), require("snabbdom/modules/props"), require("snabbdom/modules/style"));
 	else
-		root["VueMarkdown"] = factory(root["babel-runtime/core-js/object/keys"], root["babel-runtime/core-js/get-iterator"], root["markdown-it"], root["markdown-it-emoji"], root["markdown-it-sub"], root["markdown-it-sup"], root["markdown-it-footnote"], root["markdown-it-deflist"], root["markdown-it-abbr"], root["markdown-it-ins"], root["markdown-it-mark"], root["markdown-it-toc-and-anchor"], root["markdown-it-katex"], root["markdown-it-prism"], root["markdown-it-task-lists"], root["snabbdom-virtualize"], root["snabbdom"], root["snabbdom/modules/attributes"], root["snabbdom/modules/class"], root["snabbdom/modules/dataset"], root["snabbdom/modules/eventlisteners"], root["snabbdom/modules/hero"], root["snabbdom/modules/props"], root["snabbdom/modules/style"]);
+		root["VueMarkdown"] = factory(root["babel-runtime/core-js/object/keys"], root["babel-runtime/core-js/get-iterator"], root["markdown-it"], root["markdown-it-emoji"], root["markdown-it-sub"], root["markdown-it-sup"], root["markdown-it-footnote"], root["markdown-it-deflist"], root["markdown-it-abbr"], root["markdown-it-ins"], root["markdown-it-mark"], root["markdown-it-toc-and-anchor"], root["markdown-it-katex"], root["markdown-it-highlightjs"], root["markdown-it-task-lists"], root["snabbdom-virtualize"], root["snabbdom"], root["snabbdom/modules/attributes"], root["snabbdom/modules/class"], root["snabbdom/modules/dataset"], root["snabbdom/modules/eventlisteners"], root["snabbdom/modules/hero"], root["snabbdom/modules/props"], root["snabbdom/modules/style"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_4__, __WEBPACK_EXTERNAL_MODULE_5__, __WEBPACK_EXTERNAL_MODULE_6__, __WEBPACK_EXTERNAL_MODULE_7__, __WEBPACK_EXTERNAL_MODULE_8__, __WEBPACK_EXTERNAL_MODULE_9__, __WEBPACK_EXTERNAL_MODULE_10__, __WEBPACK_EXTERNAL_MODULE_11__, __WEBPACK_EXTERNAL_MODULE_12__, __WEBPACK_EXTERNAL_MODULE_13__, __WEBPACK_EXTERNAL_MODULE_14__, __WEBPACK_EXTERNAL_MODULE_15__, __WEBPACK_EXTERNAL_MODULE_16__, __WEBPACK_EXTERNAL_MODULE_17__, __WEBPACK_EXTERNAL_MODULE_18__, __WEBPACK_EXTERNAL_MODULE_19__, __WEBPACK_EXTERNAL_MODULE_20__, __WEBPACK_EXTERNAL_MODULE_21__, __WEBPACK_EXTERNAL_MODULE_22__, __WEBPACK_EXTERNAL_MODULE_23__, __WEBPACK_EXTERNAL_MODULE_24__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -118,9 +118,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _markdownItKatex2 = _interopRequireDefault(_markdownItKatex);
 
-	var _markdownItPrism = __webpack_require__(14);
+	var _markdownItHighlightjs = __webpack_require__(14);
 
-	var _markdownItPrism2 = _interopRequireDefault(_markdownItPrism);
+	var _markdownItHighlightjs2 = _interopRequireDefault(_markdownItHighlightjs);
 
 	var _markdownItTaskLists = __webpack_require__(15);
 
@@ -335,9 +335,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 
 	      if (this.highlight) {
-	        this.md.use(_markdownItPrism2.default, {
-	          plugins: ['keep-markup']
-	        });
+	        this.md.use(_markdownItHighlightjs2.default);
 	      }
 
 	      this.md.set({
@@ -392,10 +390,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    renderMarkdown: function renderMarkdown() {
 	      if (!this.md) return;
-
 	      var outHtml = this.md.render(this.show ? this.prerender(this.sourceData) : '');
 	      outHtml = '<div>' + this.postrender(outHtml) + '</div>';
-
 	      var newVNode = (0, _snabbdomVirtualize2.default)(outHtml);
 	      var oldVNode = (0, _snabbdomVirtualize2.default)(this.$refs.markdown);
 	      snabbdomPatch(oldVNode, newVNode);
