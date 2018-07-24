@@ -54,7 +54,7 @@
     "markdown-it-sup": "^1.0.0",
     "markdown-it-task-lists": "^2.0.1",
     "markdown-it-toc-and-anchor": "leopoldchen/markdown-it-toc-and-anchor",
-    "snabbdom": "~0.6.6",
-    "snabbdom-virtualize": "^0.7.0"
+    "snabbdom": "~0.7.1",
+    "snabbdom-virtualize": "leopoldchen/snabbdom-virtualize"
   }
 }
