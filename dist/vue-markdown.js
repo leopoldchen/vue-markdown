@@ -139,9 +139,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _markdownItKatex2 = _interopRequireDefault(_markdownItKatex);
 
-	var _markdownItHighlightjs = __webpack_require__(177);
+	var _markdownItHighlight = __webpack_require__(177);
 
-	var _markdownItHighlightjs2 = _interopRequireDefault(_markdownItHighlightjs);
+	var _markdownItHighlight2 = _interopRequireDefault(_markdownItHighlight);
 
 	var _markdownItTaskLists = __webpack_require__(356);
 
@@ -356,7 +356,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 
 	      if (this.highlight) {
-	        this.md.use(_markdownItHighlightjs2.default);
+	        this.md.use(_markdownItHighlight2.default);
 	      }
 
 	      this.md.set({
@@ -22475,52 +22475,8 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	const hljs = __webpack_require__(178)
-
-	const maybe = f => {
-	  try {
-	    return f()
-	  } catch (e) {
-	    return false
-	  }
-	}
-
-	// Highlight with given language.
-	const highlight = (code, lang) =>
-	  maybe(() => hljs.highlight(lang, code, true).value) || ''
-
-	// Highlight with given language or automatically.
-	const highlightAuto = (code, lang) =>
-	  lang
-	    ? highlight(code, lang)
-	    : maybe(() => hljs.highlightAuto(code).value) || ''
-
-	// Wrap a render function to add `hljs` class to code blocks.
-	const wrap = render =>
-	  function (...args) {
-	    return render.apply(this, args)
-	      .replace('<code class="', '<code class="hljs ')
-	      .replace('<code>', '<code class="hljs">')
-	  }
-
-	const highlightjs = (md, opts) => {
-	  opts = Object.assign({}, highlightjs.defaults, opts)
-
-	  md.options.highlight = opts.auto ? highlightAuto : highlight
-	  md.renderer.rules.fence = wrap(md.renderer.rules.fence)
-
-	  if (opts.code) {
-	    md.renderer.rules.code_block = wrap(md.renderer.rules.code_block)
-	  }
-	}
-
-	highlightjs.defaults = {
-	  auto: true,
-	  code: true
-	}
-
-	module.exports = highlightjs
-
+	module.exports=function(e){function r(t){if(n[t])return n[t].exports;var u=n[t]={i:t,l:!1,exports:{}};return e[t].call(u.exports,u,u.exports,r),u.l=!0,u.exports}var n={};return r.m=e,r.c=n,r.d=function(e,n,t){r.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:t})},r.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(n,"a",n),n},r.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},r.p="",r(r.s=0)}([function(e,r,n){"use strict";Object.defineProperty(r,"__esModule",{value:!0}),n(1);var t=n(2),u=function(e){return e&&e.__esModule?e:{default:e}}(t),o=function(e){var r=e.renderer.rules.fence.bind(e.renderer.rules);e.renderer.rules.fence=function(e,n,t,o,i){var c=e[n],l=c.content.trim();return c.info.length>0?'<pre><code class="hljs">'+u.default.highlightAuto(l,[c.info]).value+"</code></pre>":r(e,n,t,o,i)}};r.default=o},function(e,r){},function(e,r){e.exports=__webpack_require__(178)}]);
+	//# sourceMappingURL=index.js.map
 
 /***/ }),
 /* 178 */

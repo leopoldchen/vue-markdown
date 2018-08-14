@@ -9,7 +9,7 @@ import insert from 'markdown-it-ins'
 import mark from 'markdown-it-mark'
 import toc from 'markdown-it-toc-and-anchor'
 import katex from 'markdown-it-katex'
-import highlightjs from 'markdown-it-highlightjs'
+import highlightjs from 'markdown-it-highlight'
 import tasklists from 'markdown-it-task-lists'
 import virtualize from 'snabbdom-virtualize'
 
